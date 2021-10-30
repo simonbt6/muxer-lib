@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(muxer_lib)
+
+set (SOURCE
+    "VideoCodecs.cpp"
+    "VideoDecoder.cpp"
+)
+
+set (includes "../../includes/")
+set (libs "../../libs/")
+
+add_library(muxer_lib ${SOURCE})
+
+target_include_directories(muxer_lib PUBLIC "../" ${includes} ${includes}/ffmpeg ${libs}/glfw/include/ ${libs}/glfw/deps/ ${libs}/glad/include/)
